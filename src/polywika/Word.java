@@ -14,12 +14,14 @@ public class Word {
     private String word;
     private String meaning;
     private String diin; //pronounciation
+    private String type;
     private int[] guesses; //0 = correct, 1 = wrong
 
-    public Word(String word_in, String meaning_in, String diin_in) {
+    public Word(String word_in, String meaning_in, String diin_in, String type_in) {
         word = word_in;
         meaning = meaning_in;
         diin = diin_in;
+        type = type_in;
         guesses = new int[2];
     }
 
@@ -36,6 +38,14 @@ public class Word {
 
     public String getDiin() {
         return diin;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type_in) {
+        type = type_in;
     }
 
     public void setDiin(String diin_in) {
