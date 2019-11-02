@@ -11,8 +11,8 @@ package polywika;
  */
 public class Word {
 
-    private final String word;
-    private final String meaning;
+    private String word;
+    private String meaning;
     private int[] guesses; //0 = correct, 1 = wrong
 
     public Word(String word_in, String meaning_in) {
@@ -21,12 +21,31 @@ public class Word {
         guesses = new int[2];
     }
 
+    public Word() {
+    }
+
     public String getWord() {
         return word;
     }
 
     public String getMeaning() {
         return meaning;
+    }
+
+    public void setWord(String word_in) {
+        word = word_in;
+    }
+
+    public void setMeaning(String meaning_in) {
+        meaning = meaning_in;
+    }
+
+    public int[] getGuesses() {
+        return guesses;
+    }
+
+    public void setGuesses(int[] i) {
+        guesses = i;
     }
 
     public void addGuess(boolean guess) { //0 = correct, 1 = wrong

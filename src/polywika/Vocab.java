@@ -23,11 +23,40 @@ public class Vocab {
         unlearned = new ArrayList<>();
     }
 
+    public Vocab() {
+
+    }
+
     public void addNewWord(String word, String meaning) {
         unlearned.add(new Word(word, meaning));
     }
 
     public void learnWord(Word w) {
+        unlearned.remove(w);
+        learned.add(w);
+    }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name_in) {
+        name = name_in;
+    }
+
+    public ArrayList<Word> getLearned() {
+        return learned;
+    }
+
+    public void setLearned(ArrayList<Word> a) {
+        learned = a;
+    }
+
+    public ArrayList<Word> getUnlearned() {
+        return unlearned;
+    }
+
+    public void setUnearned(ArrayList<Word> a) {
+        unlearned = a;
     }
 }
