@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package polywika;
+package polywika.Bisaya;
 
 import java.io.IOException;
 import java.net.URL;
@@ -29,25 +29,25 @@ public class BisayaFXMLController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
-    public void handleButtonActionBack (ActionEvent event) throws IOException{
+    }
+
+    public void handleButtonActionBack(ActionEvent event) throws IOException {
         //System.out.println("Lmao gumagana");
         Parent homePage = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
         Scene homePageScene = new Scene(homePage);
-        Stage homeStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-    
+        Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
         homeStage.setScene(homePageScene);
         homeStage.show();
     }
-    
-    public void handleButtonActionLearn (ActionEvent event) throws IOException{
+
+    public void handleButtonActionLearn(ActionEvent event) throws IOException {
         Parent learnBis = FXMLLoader.load(getClass().getResource("/polywika/Bisaya/LearnBis.fxml"));
         Scene learnBisScene = new Scene(learnBis);
-        Stage learnBisStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-    
+        Stage learnBisStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
         learnBisStage.setScene(learnBisScene);
-        learnBisStage.show(); 
+        learnBisStage.show();
     }
-    
+
 }
