@@ -27,8 +27,8 @@ public class Vocab {
 
     }
 
-    public void addNewWord(String word, String meaning) {
-        unlearned.add(new Word(word, meaning));
+    public void addNewWord(String word, String meaning, String diin) {
+        unlearned.add(new Word(word, meaning, diin));
     }
 
     public void learnWord(Word w) {

@@ -5,6 +5,7 @@
  */
 package polywika.Tagalog;
 
+import polywika.Vocab;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
