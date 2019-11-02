@@ -4,13 +4,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="polywika.TagalogFXMLController">
-   <children>
-      <Button layoutX="271.0" layoutY="224.0" mnemonicParsing="false" text="Practice" />
-      <Button layoutX="277.0" layoutY="114.0" mnemonicParsing="false" onAction="#handleButtonActionLearn" text="Learn" />
-      <Button layoutX="541.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleButtonActionBack" prefHeight="25.0" prefWidth="45.0" text="Back" />
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Lmao" />
-      <Text layoutX="279.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tagalog" />
-   </children>
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="polywika.Tagalog.TagalogFXMLController">
+    <children>
+        <Button layoutX="271.0" layoutY="224.0" mnemonicParsing="false" text="Practice" />
+        <Button layoutX="277.0" layoutY="114.0" mnemonicParsing="false" text="Learn" />
+        <Button layoutX="541.0" layoutY="361.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="45.0" text="Back" />
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Lmao" />
+        <Text layoutX="279.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tagalog" />
+    </children>
 </AnchorPane>

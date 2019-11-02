@@ -19,8 +19,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import polywika.Bisaya.BisayaFXMLController;
 import polywika.Tagalog.TagalogFXMLController;
-import polywika.Tagalog.*;
 
 /**
  * FXML Controller class
@@ -40,22 +40,30 @@ public class HomePageController implements Initializable {
         // TODO
     }
 
-    public void handleButtonActionTagalog(ActionEvent event) throws IOException{
-        Parent TagPage = FXMLLoader.load(getClass().getResource("/polywika/Tagalog/TagalogFXML.fxml"));
-        Scene TagPageScene = new Scene(TagPage);
-        Stage TagStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-    
-        TagStage.setScene(TagPageScene);
-        TagStage.show();
+    public void handleButtonActionTagalog(ActionEvent e) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Tagalog/TagalogFXML.fxml"));
+            Parent secondview = loader.load();
+            Scene newscene = new Scene(secondview);
+            TagalogFXMLController other = loader.getController();
+            Stage curstage = (Stage) root.getScene().getWindow();
+            curstage.setScene(newscene);
+        } catch (IOException ex) {
+            Logger.getLogger(HomePageController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
-    
-    public void handleButtonActionBisaya(ActionEvent event) throws IOException{
-        Parent BisPage = FXMLLoader.load(getClass().getResource("/polywika/Bisaya/BisayaFXML.fxml"));
-        Scene BisPageScene = new Scene(BisPage);
-        Stage BisStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-    
-        BisStage.setScene(BisPageScene);
-        BisStage.show();
+
+    public void handleButtonActionBisaya(ActionEvent event) throws IOException {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Bisaya/BisayaFXML.fxml"));
+            Parent secondview = loader.load();
+            Scene newscene = new Scene(secondview);
+            BisayaFXMLController other = loader.getController();
+            Stage curstage = (Stage) root.getScene().getWindow();
+            curstage.setScene(newscene);
+        } catch (IOException ex) {
+            Logger.getLogger(HomePageController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
 }
