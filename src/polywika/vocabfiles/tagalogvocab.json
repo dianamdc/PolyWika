@@ -1,5 +1,22 @@
 {
     "name":"Tagalog",
-    "learned":[{"word":"alam","meaning":"know"}],
-    "unlearned":[{"word":"alam","meaning":"know"}]
+    "unlearned":[
+        {
+            "word":"alam",
+            "meaning":"know",
+            "diin" : "",
+            "type" : ""
+        },
+        {
+            "word" : "tao",
+            "meaning" : "person",
+            "diin" : "TA-o",
+            "type" : "noun"
+        }
+    ],
+    "learned":[
+        {
+            
+        }
+    ]
 }

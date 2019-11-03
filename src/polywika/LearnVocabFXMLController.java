@@ -9,16 +9,15 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
-import polywika.Tagalog.TagalogVocabFXMLController;
+import javax.swing.JOptionPane;
 
 /**
  * FXML Controller class
@@ -32,8 +31,10 @@ public class LearnVocabFXMLController implements Initializable {
      */
     private Vocab v;
     private String lang;
+    private int count = 0;
+    private ArrayList<Word> learnedWords = new ArrayList<>();
     @FXML
-    private Text txt, num, order, word, meaning, wordsLeft;
+    private Text txt, num, order, word, meaning, wordsLeft, diin, type;
     @FXML
     private TextField numWords;
     @FXML
@@ -46,30 +47,68 @@ public class LearnVocabFXMLController implements Initializable {
 
     @FXML
     public void handleButtonActionStart(ActionEvent e) {
-        String n = numWords.getText();
-        int i = 0;
+        String str = numWords.getText();
+        int n = 0;
         try {
-            i = Integer.parseInt(n);
+            n = Integer.parseInt(str);
         } catch (NumberFormatException err) {
             //add error
         }
-        if (i <= v.getUnlearned().size()) {
-            learn(i);
+        if (n <= v.getUnlearned().size()) {
+            menu.setVisible(false);
+            learning.setVisible(true);
+            num.setText(String.valueOf(n));
+            learn(0);
         } else {
             //add error
         }
     }
 
-    public void learn(int n) {
-        menu.setVisible(false);
-        learning.setVisible(true);
-        num.setText(String.valueOf(n));
+    @FXML
+    public void handleButtonActionNext(ActionEvent e) {
+        if (count < v.getUnlearned().size() - 1) {
+            count++;
+            learn(count);
+        } else {
+            int boo = JOptionPane.showConfirmDialog(null, "Finish learning?");
+            if (boo == 0) {
+                for (Word w : learnedWords) {
+                    v.learnWord(w);
+                }
 
-        for (int i = 0; i < n; i++) {
-            order.setText(String.valueOf(i + 1));
-            Word w = v.getUnlearned().get(i);
-            word.setText(w.getWord());
-            meaning.setText(w.getMeaning());
+                int x = JOptionPane.showConfirmDialog(null, "Would you like to take a quiz?");
+                if (x == 0) {
+                    //test
+                } else if (x == 1) {
+                    //exit
+                }
+            }
+        }
+    }
+
+    @FXML
+    public void handleButtonActionPrev(ActionEvent e) {
+        if (count > 0) {
+            count--;
+            learn(count);
+        }
+    }
+
+    public void learn(int n) {
+        order.setText(String.valueOf(n + 1));
+        Word w = v.getUnlearned().get(n);
+        //v.learnWord(w);
+        if (!learnedWords.contains(w)) learnedWords.add(w);
+
+        word.setText(w.getWord());
+        meaning.setText(w.getMeaning());
+        diin.setText(w.getDiin());
+        type.setText(w.getType());
+    }
+
+    public void test() {
+        for (int i = 0; i < learnedWords.size(); i++) {
+
         }
     }
 
@@ -84,7 +123,7 @@ public class LearnVocabFXMLController implements Initializable {
 
             wordsLeft.setText(String.valueOf(v.getUnlearned().size()));
         } catch (IOException ex) {
-            Logger.getLogger(TagalogVocabFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+            //add errors
         }
     }
 }
