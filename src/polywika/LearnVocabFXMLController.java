@@ -31,7 +31,7 @@ public class LearnVocabFXMLController implements Initializable {
      */
     private Vocab v;
     private String lang;
-    private int count = 0;
+    private int count = 0, numToLearn = 0;
     private ArrayList<Word> learnedWords = new ArrayList<>();
     @FXML
     private Text txt, num, order, word, meaning, wordsLeft, diin, type;
@@ -54,10 +54,11 @@ public class LearnVocabFXMLController implements Initializable {
         } catch (NumberFormatException err) {
             //add error
         }
-        if (n <= v.getUnlearned().size()) {
+        if (n < v.getUnlearned().size()) {
             menu.setVisible(false);
             learning.setVisible(true);
             num.setText(String.valueOf(n));
+            numToLearn = n;
             learn(0);
         } else {
             //add error
@@ -66,7 +67,7 @@ public class LearnVocabFXMLController implements Initializable {
 
     @FXML
     public void handleButtonActionNext(ActionEvent e) {
-        if (count < v.getUnlearned().size() - 1) {
+        if (numToLearn < v.getUnlearned().size() - 1) {
             count++;
             learn(count);
         } else {
@@ -88,7 +89,7 @@ public class LearnVocabFXMLController implements Initializable {
 
     @FXML
     public void handleButtonActionPrev(ActionEvent e) {
-        if (count > 0) {
+        if (numToLearn > 0) {
             count--;
             learn(count);
         }
