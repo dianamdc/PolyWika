@@ -54,7 +54,7 @@ public class LearnVocabFXMLController implements Initializable {
         } catch (NumberFormatException err) {
             //add error
         }
-        if (n < v.getUnlearned().size()) {
+        if (n <= v.getUnlearned().size()) {
             menu.setVisible(false);
             learning.setVisible(true);
             num.setText(String.valueOf(n));
@@ -67,7 +67,7 @@ public class LearnVocabFXMLController implements Initializable {
 
     @FXML
     public void handleButtonActionNext(ActionEvent e) {
-        if (numToLearn < v.getUnlearned().size() - 1) {
+        if (count < numToLearn - 1) {
             count++;
             learn(count);
         } else {
@@ -89,7 +89,7 @@ public class LearnVocabFXMLController implements Initializable {
 
     @FXML
     public void handleButtonActionPrev(ActionEvent e) {
-        if (numToLearn > 0) {
+        if (count > 0) {
             count--;
             learn(count);
         }
