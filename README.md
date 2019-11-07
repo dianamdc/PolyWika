@@ -1,7 +1,7 @@
 # PolyWika
-To do: (pili kayo ng gagawin)
-- add testing/practice (vocab)
-- add testing/practice (grammar)
-- add learning (grammar)
+To do: (pili kayo ng gagawin) 
+- add testing/practice (vocab)  (Theo) 
+- add testing/practice (grammar)  (Sam)
+- add learning (grammar) (Joshua)
 - add words to json
-- fix layout
+- fix layout (Jem)
