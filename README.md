@@ -1,5 +1,5 @@
 # PolyWika
-To do:
+To do: (pili kayo ng gagawin)
 - add testing/practice (vocab)
 - add testing/practice (grammar)
 - add learning (grammar)
