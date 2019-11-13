@@ -87,6 +87,7 @@ public class LearnVocabFXMLController implements Initializable {
                     menu.setVisible(true);
                     wordsLeft.setText(String.valueOf(v.getUnlearned().size()));
                     learning.setVisible(false);
+                    count = 0;
                 }
             }
         }
