@@ -81,7 +81,7 @@ public class LearnVocabFXMLController implements Initializable {
 
                 int x = JOptionPane.showConfirmDialog(null, "Would you like to take a quiz?");
                 if (x == 0) {
-                    //test
+                    //go to test/practice
                 } else if (x == 1) {
                     //exit
                     menu.setVisible(true);
