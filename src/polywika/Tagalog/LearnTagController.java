@@ -14,13 +14,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 //import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import polywika.HomePageController;
+import polywika.LearnVocabFXMLController;
 
 /**
  * FXML Controller class
@@ -49,10 +49,11 @@ public class LearnTagController implements Initializable {
 
     public void handleButtonActionLearnVocab(ActionEvent e) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("TagalogVocabFXML.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/polywika/LearnVocabFXML.fxml"));
             Parent secondview = loader.load();
             Scene newscene = new Scene(secondview);
-            TagalogVocabFXMLController other = loader.getController();
+            LearnVocabFXMLController other = loader.getController();
+            other.setLanguage("tagalog");
             Stage curstage = (Stage) root.getScene().getWindow();
             curstage.setScene(newscene);
         } catch (IOException ex) {
