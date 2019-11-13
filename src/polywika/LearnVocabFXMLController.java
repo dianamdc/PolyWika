@@ -11,6 +11,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -82,6 +84,9 @@ public class LearnVocabFXMLController implements Initializable {
                     //test
                 } else if (x == 1) {
                     //exit
+                    menu.setVisible(true);
+                    wordsLeft.setText(String.valueOf(v.getUnlearned().size()));
+                    learning.setVisible(false);
                 }
             }
         }
@@ -114,17 +119,17 @@ public class LearnVocabFXMLController implements Initializable {
     }
 
     public void setLanguage(String lang_in) {
-        learning.setVisible(false);
-        lang = lang_in;
-        txt.setText(lang_in);
         try {
+            learning.setVisible(false);
+            lang = lang_in;
+            txt.setText(lang_in);
             ObjectMapper objectMapper = new ObjectMapper();
             String dir = "src/polywika/vocabfiles/" + lang_in + "vocab.json";
             v = objectMapper.readValue(new File(dir), Vocab.class);
 
             wordsLeft.setText(String.valueOf(v.getUnlearned().size()));
         } catch (IOException ex) {
-            //add errors
+            Logger.getLogger(LearnVocabFXMLController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }
