@@ -1,5 +1,50 @@
 {
     "name":"Tagalog",
-    "learned":[{"word":"alam","meaning":"know"}],
-    "unlearned":[{"word":"alam","meaning":"know"}]
+    "unlearned":[
+        {
+            "word":"anak",
+            "meaning":"child",
+            "diin" : "a-NAK",
+            "type" : "pangngalan"
+        },
+        {
+            "word" : "tao",
+            "meaning" : "person",
+            "diin" : "TA-o",
+            "type" : "pangngalan"
+        }
+        },
+        {
+            "word" : "ate",
+            "meaning" : "older sister",
+            "diin" : "A-te",
+            "type" : "pangngalan"
+        }
+        },
+        {
+            "word" : "babae",
+            "meaning" : "woman",
+            "diin" : "ba-BA-e",
+            "type" : "pangngalan"
+        }
+        },
+        {
+            "word" : "kapatid",
+            "meaning" : "sibling",
+            "diin" : "ka-pa-TID",
+            "type" : "pangngalan"
+        }
+        },
+        {
+            "word" : "kuya",
+            "meaning" : "older brother",
+            "diin" : "ku-YA",
+            "type" : "pangngalan"
+        }
+    ],
+    "learned":[
+        {
+
+        }
+    ]
 }
