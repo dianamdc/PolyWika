@@ -57,7 +57,21 @@ public class LearnTagController implements Initializable {
             Stage curstage = (Stage) root.getScene().getWindow();
             curstage.setScene(newscene);
         } catch (IOException ex) {
-            Logger.getLogger(HomePageController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(LearnTagController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
+    public void handleButtonActionLearnGrammar(ActionEvent e) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("TagalogGrammar.fxml"));
+            Parent secondview = loader.load();
+            Scene newscene = new Scene(secondview);
+            TagalogGrammarController other = loader.getController();
+            Stage curstage = (Stage) root.getScene().getWindow();
+            curstage.setScene(newscene);
+        } catch (IOException ex) {
+            Logger.getLogger(LearnTagController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }
