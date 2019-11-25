@@ -2,12 +2,29 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="root" fx:id="root" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="polywika.HomePageController">
+<AnchorPane id="root" fx:id="root" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: c7d0d8;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="polywika.HomePageController">
    <children>
-      <Label layoutX="249.0" layoutY="137.0" text="Choose a language" />
-      <Button layoutX="269.0" layoutY="187.0" mnemonicParsing="false" onAction="#handleButtonActionTagalog" text="Tagalog" />
-      <Button layoutX="274.0" layoutY="224.0" mnemonicParsing="false" onAction="#handleButtonActionBisaya" text="Bisaya" />
+      <ImageView fitHeight="400.0" fitWidth="617.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/Logo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="131.0" layoutY="171.0" text="Choose a language">
+         <font>
+            <Font name="Gadugi" size="40.0" />
+         </font></Label>
+      <Button layoutX="156.0" layoutY="247.0" mnemonicParsing="false" onAction="#handleButtonActionTagalog" style="-fx-background-color: black;" text="Tagalog" textFill="WHITE">
+         <font>
+            <Font name="Gadugi" size="25.0" />
+         </font></Button>
+      <Button layoutX="318.0" layoutY="247.0" mnemonicParsing="false" onAction="#handleButtonActionBisaya" prefHeight="54.0" prefWidth="123.0" style="-fx-background-color: black;" text="Bisaya" textFill="WHITE">
+         <font>
+            <Font size="25.0" />
+         </font></Button>
    </children>
 </AnchorPane>
