@@ -15,11 +15,17 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import javax.swing.JOptionPane;
+import polywika.Tagalog.LearnTagController;
 
 /**
  * FXML Controller class
@@ -41,6 +47,8 @@ public class LearnVocabFXMLController implements Initializable {
     private TextField numWords;
     @FXML
     private Pane menu, learning;
+    @FXML
+    private AnchorPane root;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -129,6 +137,19 @@ public class LearnVocabFXMLController implements Initializable {
             v = objectMapper.readValue(new File(dir), Vocab.class);
 
             wordsLeft.setText(String.valueOf(v.getUnlearned().size()));
+        } catch (IOException ex) {
+            Logger.getLogger(LearnVocabFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void handleButtonActionBack(ActionEvent e) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Tagalog/LearnTag.fxml"));
+            Parent secondview = loader.load();
+            Scene newscene = new Scene(secondview);
+            LearnTagController other = loader.getController();
+            Stage curstage = (Stage) root.getScene().getWindow();
+            curstage.setScene(newscene);
         } catch (IOException ex) {
             Logger.getLogger(LearnVocabFXMLController.class.getName()).log(Level.SEVERE, null, ex);
         }

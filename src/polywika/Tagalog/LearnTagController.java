@@ -43,10 +43,6 @@ public class LearnTagController implements Initializable {
         // TODO
     }
 
-    public void handleButtonActionBack(ActionEvent event) throws IOException {
-
-    }
-
     public void handleButtonActionLearnVocab(ActionEvent e) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/polywika/LearnVocabFXML.fxml"));
@@ -68,6 +64,19 @@ public class LearnTagController implements Initializable {
             Parent secondview = loader.load();
             Scene newscene = new Scene(secondview);
             TagalogGrammarController other = loader.getController();
+            Stage curstage = (Stage) root.getScene().getWindow();
+            curstage.setScene(newscene);
+        } catch (IOException ex) {
+            Logger.getLogger(LearnTagController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void handleButtonActionBack(ActionEvent e) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("TagalogFXML.fxml"));
+            Parent secondview = loader.load();
+            Scene newscene = new Scene(secondview);
+            TagalogFXMLController other = loader.getController();
             Stage curstage = (Stage) root.getScene().getWindow();
             curstage.setScene(newscene);
         } catch (IOException ex) {

@@ -46,23 +46,25 @@ public class TagalogGrammarController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        try {
-            ObjectMapper objectMapper = new ObjectMapper();
-            String dir = "src/polywika/vocabfiles/tagaloggrammar.json";
-            Vocab v = objectMapper.readValue(new File(dir), Vocab.class);
-        } catch (IOException ex) {
-            Logger.getLogger(TagalogGrammarController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            ObjectMapper objectMapper = new ObjectMapper();
+//            String dir = "src/polywika/vocabfiles/TagalogGrammarTest.json";
+//            Vocab v = objectMapper.readValue(new File(dir), Vocab.class);
+//        } catch (IOException ex) {
+//            Logger.getLogger(TagalogGrammarController.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
-    public void GoToHomeScreen(ActionEvent event) throws IOException {
-        {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/polywika/HomePageFXML.fxml"));
+    public void handleButtonActionBack(ActionEvent e) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/polywika/HomePage.fxml"));
             Parent secondview = loader.load();
             Scene newscene = new Scene(secondview);
             HomePageController other = loader.getController();
             Stage curstage = (Stage) root.getScene().getWindow();
             curstage.setScene(newscene);
+        } catch (IOException ex) {
+            Logger.getLogger(TagalogGrammarController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }
