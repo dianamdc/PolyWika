@@ -19,7 +19,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import polywika.Bisaya.BisayaFXMLController;
+import polywika.Cebuano.CebuanoFXMLController;
 import polywika.Tagalog.TagalogFXMLController;
 
 /**
@@ -53,12 +53,12 @@ public class HomePageController implements Initializable {
         }
     }
 
-    public void handleButtonActionBisaya(ActionEvent event) throws IOException {
+    public void handleButtonActionCebuano(ActionEvent event) throws IOException {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Bisaya/BisayaFXML.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Cebuano/CebuanoFXML.fxml"));
             Parent secondview = loader.load();
             Scene newscene = new Scene(secondview);
-            BisayaFXMLController other = loader.getController();
+            CebuanoFXMLController other = loader.getController();
             Stage curstage = (Stage) root.getScene().getWindow();
             curstage.setScene(newscene);
         } catch (IOException ex) {

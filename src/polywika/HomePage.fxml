@@ -22,9 +22,9 @@
          <font>
             <Font name="Gadugi" size="25.0" />
          </font></Button>
-      <Button layoutX="318.0" layoutY="247.0" mnemonicParsing="false" onAction="#handleButtonActionBisaya" prefHeight="54.0" prefWidth="123.0" style="-fx-background-color: black;" text="Bisaya" textFill="WHITE">
+      <Button layoutX="318.0" layoutY="247.0" mnemonicParsing="false" onAction="#handleButtonActionCebuano" prefHeight="54.0" prefWidth="123.0" style="-fx-background-color: black;" text="Cebuano" textFill="WHITE">
          <font>
-            <Font size="25.0" />
+            <Font size="22.0" />
          </font></Button>
    </children>
 </AnchorPane>

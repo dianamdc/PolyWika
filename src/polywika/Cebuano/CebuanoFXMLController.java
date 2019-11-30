@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package polywika.Bisaya;
+package polywika.Cebuano;
 
 import java.io.IOException;
 import java.net.URL;
@@ -21,7 +21,7 @@ import javafx.stage.Stage;
  *
  * @author MARUAL FAMILY
  */
-public class BisayaFXMLController implements Initializable {
+public class CebuanoFXMLController implements Initializable {
 
     /**
      * Initializes the controller class.
@@ -42,12 +42,12 @@ public class BisayaFXMLController implements Initializable {
     }
 
     public void handleButtonActionLearn(ActionEvent event) throws IOException {
-        Parent learnBis = FXMLLoader.load(getClass().getResource("/polywika/Bisaya/LearnBis.fxml"));
-        Scene learnBisScene = new Scene(learnBis);
-        Stage learnBisStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Parent learnCeb = FXMLLoader.load(getClass().getResource("/polywika/Cebuano/Cebuano.fxml"));
+        Scene learnCebScene = new Scene(learnCeb);
+        Stage learnCebStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-        learnBisStage.setScene(learnBisScene);
-        learnBisStage.show();
+        learnCebStage.setScene(learnCebScene);
+        learnCebStage.show();
     }
 
 }

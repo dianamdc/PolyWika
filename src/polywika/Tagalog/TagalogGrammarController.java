@@ -22,7 +22,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import polywika.Bisaya.BisayaFXMLController;
+import polywika.Cebuano.CebuanoFXMLController;
 import polywika.HomePageController;
 import polywika.Vocab;
 
