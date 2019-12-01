@@ -20,9 +20,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import polywika.Cebuano.CebuanoFXMLController;
 import polywika.HomePageController;
 import polywika.Vocab;
 
@@ -33,29 +34,30 @@ import polywika.Vocab;
  */
 public class TagalogGrammarController implements Initializable {
 
+    private String[] Questions = {"Mahal ko ang _____ pamilya", "_____ ang aking itinutukoy", "Tumakbo siya ____ mabilis",
+        "Tinawag siya ___ kaniyang ina"};
+    private String[] Answers = {"aking", "Ikaw", "nang", "ng"};
+    private Boolean compare;
+    private String aa, Correct = "correct", Wrong = "wrong";
+    private int i;
     @FXML
     AnchorPane root;
     @FXML
     Button HomePage;
     @FXML
-    ChoiceBox Choices;
+    TextField answer;
+    @FXML
+    Label Question, RoW;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-//        try {
-//            ObjectMapper objectMapper = new ObjectMapper();
-//            String dir = "src/polywika/vocabfiles/TagalogGrammarTest.json";
-//            Vocab v = objectMapper.readValue(new File(dir), Vocab.class);
-//        } catch (IOException ex) {
-//            Logger.getLogger(TagalogGrammarController.class.getName()).log(Level.SEVERE, null, ex);
-//        }
+
     }
 
-    public void handleButtonActionBack(ActionEvent e) {
+    public void GoToHomeScreen(ActionEvent event) throws IOException {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/polywika/HomePage.fxml"));
             Parent secondview = loader.load();
@@ -64,7 +66,37 @@ public class TagalogGrammarController implements Initializable {
             Stage curstage = (Stage) root.getScene().getWindow();
             curstage.setScene(newscene);
         } catch (IOException ex) {
-            Logger.getLogger(TagalogGrammarController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(HomePageController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void CheckAnswer(ActionEvent event) throws IOException {
+        String a = answer.getText();
+        aa = Answers[i];
+        if (aa.equals(a)) {
+            RoW.setText(Correct);
+            i++;
+        } else {
+            RoW.setText(Wrong);
+        }
+
+    }
+
+    public void NextQuestion(ActionEvent event) throws IOException {
+        for (i = 0; i >= 0; i++) {
+            Question.setText(Questions[i]);
+        }
+        for (i = 1; i >= 1; i++) {
+            Question.setText(Questions[i]);
+        }
+        for (i = 2; i >= 2; i++) {
+            Question.setText(Questions[i]);
+        }
+        for (i = 3; i >= 3; i++) {
+            Question.setText(Questions[i]);
+        }
+        if (i > 3) {
+            boolean s = i == 0;
         }
     }
 }

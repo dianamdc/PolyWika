@@ -14,7 +14,7 @@
             <Image url="@../../img/background.png" />
          </image>
       </ImageView>
-        <Button alignment="TOP_CENTER" layoutX="327.0" layoutY="206.0" mnemonicParsing="false" prefHeight="88.0" prefWidth="147.0" text="Practice">
+        <Button alignment="TOP_CENTER" layoutX="327.0" layoutY="206.0" mnemonicParsing="false" onAction="#handleButtonActionPractice" prefHeight="88.0" prefWidth="147.0" text="Practice">
          <font>
             <Font size="30.0" />
          </font></Button>

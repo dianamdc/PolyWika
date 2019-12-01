@@ -68,4 +68,17 @@ public class TagalogFXMLController implements Initializable {
             Logger.getLogger(HomePageController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    public void handleButtonActionPractice(ActionEvent e) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("TagalogGrammar.fxml"));
+            Parent secondview = loader.load();
+            Scene newscene = new Scene(secondview);
+            TagalogGrammarController other = loader.getController();
+            Stage curstage = (Stage) root.getScene().getWindow();
+            curstage.setScene(newscene);
+        } catch (IOException ex) {
+            Logger.getLogger(TagalogFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
