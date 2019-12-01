@@ -5,9 +5,8 @@ package polywika.Tagalog;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 import com.fasterxml.jackson.databind.ObjectMapper;
-//import com.gluonhq.charm.glisten.control.TextField; 
+//import com.gluonhq.charm.glisten.control.TextField;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -31,12 +30,13 @@ import polywika.Word;
  * @author MARUAL FAMILY
  */
 public class TestTagVocabController implements Initializable {
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         setVocabList();
         meaning.setText(v.getUnlearned().get(n).getMeaning());
     }
-    
+
     private Vocab v;
     private Boolean vtest;
     private ArrayList<Word> learnedWords = new ArrayList<>();
@@ -53,57 +53,54 @@ public class TestTagVocabController implements Initializable {
     private TextField input;
     @FXML
     private Label numCorrect, numWrong;
-    
-    public void handleButtonActionCheck (ActionEvent e){
+
+    public void handleButtonActionCheck(ActionEvent e) {
         String userAnswer;
         userAnswer = input.getText();   //get user input answer
-        
+
         answer = v.getUnlearned().get(n).getWord();   //get correct answer from json
         //System.out.println(correct);
-        
+
         vtest = answer.equals(userAnswer);
         compare = Boolean.compare(vtest, true);
-        
-        if(compare == 0){
+
+        if (compare == 0) {
             correct++;
             n++;
-            if(n==6){
+            if (n == 6) {
                 numCorrect.setText(Integer.toString(correct));
                 numWrong.setText(Integer.toString(wrong));
-                
+
                 chck.setVisible(false);
-            }
-            else{
+            } else {
                 meaning.setText(v.getUnlearned().get(n).getMeaning());
             }
-        }
-        else{
+        } else {
             wrong++;
             n++;
-            if(n==6){
+            if (n == 6) {
                 numCorrect.setText(Integer.toString(correct));
                 numWrong.setText(Integer.toString(wrong));
-                
+
                 chck.setVisible(false);
-            }
-            else{
+            } else {
                 meaning.setText(v.getUnlearned().get(n).getMeaning());
             }
         }
-        
+
+        input.clear();
+
         //System.out.println(n);
-        
         numCorrect.setText(Integer.toString(correct));
         numWrong.setText(Integer.toString(wrong));
     }
-    
-    public void setVocabList(){
+
+    public void setVocabList() {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
             String dir = "src/polywika/vocabfiles/tagalogvocab.json";
             v = objectMapper.readValue(new File(dir), Vocab.class);
-        }
-        catch (IOException ex){
+        } catch (IOException ex) {
             Logger.getLogger(TestTagVocabController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

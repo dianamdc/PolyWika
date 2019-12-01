@@ -26,6 +26,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 import polywika.Tagalog.LearnTagController;
+import polywika.Tagalog.TestTagVocabController;
 
 /**
  * FXML Controller class
@@ -90,12 +91,33 @@ public class LearnVocabFXMLController implements Initializable {
                 int x = JOptionPane.showConfirmDialog(null, "Would you like to take a quiz?");
                 if (x == 0) {
                     //go to test/practice
+                    try {
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("Tagalog/TestTagVocab.fxml"));
+                        Parent secondview = loader.load();
+                        Scene newscene = new Scene(secondview);
+                        TestTagVocabController other = loader.getController();
+                        Stage curstage = (Stage) root.getScene().getWindow();
+                        curstage.setScene(newscene);
+                    } catch (IOException ex) {
+                        Logger.getLogger(LearnVocabFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 } else if (x == 1) {
                     //exit
                     menu.setVisible(true);
                     wordsLeft.setText(String.valueOf(v.getUnlearned().size()));
                     learning.setVisible(false);
                     count = 0;
+                    try {
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("Tagalog/LearnTag.fxml"));
+                        Parent secondview = loader.load();
+                        Scene newscene = new Scene(secondview);
+                        LearnTagController other = loader.getController();
+                        Stage curstage = (Stage) root.getScene().getWindow();
+                        curstage.setScene(newscene);
+                    } catch (IOException ex) {
+                        Logger.getLogger(LearnVocabFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+
                 }
             }
         }
