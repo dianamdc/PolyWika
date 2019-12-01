@@ -22,6 +22,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 //import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javax.swing.JOptionPane;
 import polywika.HomePageController;
 
 /**
@@ -70,15 +71,34 @@ public class TagalogFXMLController implements Initializable {
     }
 
     public void handleButtonActionPractice(ActionEvent e) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("TagalogGrammar.fxml"));
-            Parent secondview = loader.load();
-            Scene newscene = new Scene(secondview);
-            TagalogGrammarController other = loader.getController();
-            Stage curstage = (Stage) root.getScene().getWindow();
-            curstage.setScene(newscene);
-        } catch (IOException ex) {
-            Logger.getLogger(TagalogFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+        String[] options = {"Grammar", "Vocab"};
+        int x = JOptionPane.showOptionDialog(null, "Practice grammar or vocab?",
+                "",
+                JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+        System.out.println(x);
+
+        if (x == 0) {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("TagalogGrammar.fxml"));
+                Parent secondview = loader.load();
+                Scene newscene = new Scene(secondview);
+                TagalogGrammarController other = loader.getController();
+                Stage curstage = (Stage) root.getScene().getWindow();
+                curstage.setScene(newscene);
+            } catch (IOException ex) {
+                Logger.getLogger(TagalogFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else if (x == 1) {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("TestTagVocab.fxml"));
+                Parent secondview = loader.load();
+                Scene newscene = new Scene(secondview);
+                TestTagVocabController other = loader.getController();
+                Stage curstage = (Stage) root.getScene().getWindow();
+                curstage.setScene(newscene);
+            } catch (IOException ex) {
+                Logger.getLogger(TagalogFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 }

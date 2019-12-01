@@ -7,19 +7,19 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="polywika.Tagalog.TestTagVocabController">
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="polywika.Tagalog.TestTagVocabController">
    <children>
       <Text layoutX="116.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Practice the Tagalog Vocabulary">
          <font>
             <Font size="26.0" />
          </font>
       </Text>
-      <Text fx:id="tst" layoutX="225.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meaning:">
+      <Text fx:id="tst" layoutX="197.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meaning:">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
-      <Button layoutX="402.0" layoutY="211.0" mnemonicParsing="false" onAction="#handleButtonActionCheck" text="Check">
+      <Button fx:id="check" layoutX="398.0" layoutY="203.0" mnemonicParsing="false" onAction="#handleButtonActionCheck" text="Check">
          <font>
             <Font size="15.0" />
          </font>
@@ -33,11 +33,27 @@
       <Text layoutX="261.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wrong:" />
       <Label fx:id="numCorrect" layoutX="309.0" layoutY="203.0" text="0" />
       <Label fx:id="numWrong" layoutX="309.0" layoutY="218.0" text="0" />
-      <Label fx:id="meaning" layoutX="328.0" layoutY="140.0" text="Child">
+      <Label fx:id="meaning" layoutX="293.0" layoutY="142.0" text="Child">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="input" layoutX="225.0" layoutY="175.0" />
+      <TextField fx:id="input" layoutX="258.0" layoutY="171.0" />
+      <Text fx:id="tst2" layoutX="209.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Answer:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Button fx:id="back" layoutX="154.0" layoutY="288.0" mnemonicParsing="false" onAction="#handleButtonActionBack" text="Learn more Filipino languages!">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="end" layoutX="390.0" layoutY="288.0" mnemonicParsing="false" onAction="#handleButtonActionExit" text="Close">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="528.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleButtonActionBack" text="Back" />
    </children>
 </AnchorPane>
