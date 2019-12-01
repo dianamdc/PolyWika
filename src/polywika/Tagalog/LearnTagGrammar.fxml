@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="261.0" prefWidth="320.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="polywika.Tagalog.LearnTagGrammarController">
+    <children>
+        <Button id="button" fx:id="BackToHome" layoutX="14.0" layoutY="22.0" onAction="#handleBackToHome" text="Back to Home" />
+        <Label fx:id="label" layoutX="126.0" layoutY="120.0" minHeight="16.0" minWidth="69.0" />
+        <Button id="button" fx:id="Pangngalan" layoutX="113.0" layoutY="61.0" onAction="#handlePangngalan" text="Pangngalan" />
+        <Button id="button" fx:id="Panghalip" layoutX="113.0" layoutY="100.0" onAction="#handlePanghalip" prefWidth="83.0" text="Panghalip" />
+        <Button id="button" layoutX="113.0" layoutY="136.0" onAction="#handlePanguri" prefWidth="83.0" text="Pang-uri" />
+        <Button id="button" layoutX="113.0" layoutY="176.0" onAction="#handlePandiwa" prefWidth="83.0" text="Pandiwa" />
+        <Button id="button" layoutX="113.0" layoutY="216.0" onAction="#handlePangabay" prefWidth="83.0" text="Pang-abay" />
+    </children>
+</AnchorPane>

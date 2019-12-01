@@ -14,50 +14,41 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-//import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import polywika.LearnVocabFXMLController;
+import polywika.HomePageController;
 
 /**
  * FXML Controller class
  *
- * @author MARUAL FAMILY
+ * @author Admin
  */
-public class LearnTagController implements Initializable {
+public class PangabayController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     *
-     * @param url
-     * @param rb
-     */
     @FXML
-    private AnchorPane root;
+    AnchorPane root;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }
 
-    public void handleButtonActionLearnVocab(ActionEvent e) {
+    public void handleBackToHome(ActionEvent e) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/polywika/LearnVocabFXML.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/polywika/HomePage.fxml"));
             Parent secondview = loader.load();
             Scene newscene = new Scene(secondview);
-            LearnVocabFXMLController other = loader.getController();
-            other.setLanguage("tagalog");
+            HomePageController other = loader.getController();
             Stage curstage = (Stage) root.getScene().getWindow();
             curstage.setScene(newscene);
         } catch (IOException ex) {
-            Logger.getLogger(LearnTagController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(LearnTagGrammarController.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
 
-    public void handleButtonActionLearnGrammar(ActionEvent e) {
+    public void handleBackToMenu(ActionEvent e) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("LearnTagGrammar.fxml"));
             Parent secondview = loader.load();
@@ -66,20 +57,8 @@ public class LearnTagController implements Initializable {
             Stage curstage = (Stage) root.getScene().getWindow();
             curstage.setScene(newscene);
         } catch (IOException ex) {
-            Logger.getLogger(LearnTagController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(LearnTagGrammarController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
-    public void handleButtonActionBack(ActionEvent e) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("TagalogFXML.fxml"));
-            Parent secondview = loader.load();
-            Scene newscene = new Scene(secondview);
-            TagalogFXMLController other = loader.getController();
-            Stage curstage = (Stage) root.getScene().getWindow();
-            curstage.setScene(newscene);
-        } catch (IOException ex) {
-            Logger.getLogger(LearnTagController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
 }

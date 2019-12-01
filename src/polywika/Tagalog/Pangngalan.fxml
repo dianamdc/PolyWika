@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="polywika.Tagalog.PangngalanController">
+    <children>
+        <Button id="BackToHome" fx:id="BackToHome" layoutX="14.0" layoutY="21.0" mnemonicParsing="false" onAction="#handleBackToHome" text="Back to Home" />
+        <Button fx:id="BackToMenu" layoutX="14.0" layoutY="62.0" mnemonicParsing="false" onAction="#handleBackToMenu" text="Back to Menu" />
+        <Label layoutX="261.0" layoutY="67.0" text="PANGNGALAN" />
+        <Label layoutX="265.0" layoutY="91.0" text="English: noun" />
+        <TextArea editable="false" layoutX="84.0" layoutY="155.0" prefWidth="433.0" text="Ang pangngalan ay salita o bahagi ng pangungusap na tumutukoy sa ngalan ng tao, bagay, pook, hayop, at pangyayari. Maaari din na ipakilala ng pangngalan ang isang kaisipan o konsepto." wrapText="true" />
+    </children>
+</AnchorPane>

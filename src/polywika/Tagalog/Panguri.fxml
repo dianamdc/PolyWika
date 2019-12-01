@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.1" fx:controller="polywika.Tagalog.PanguriController">
+    <children>
+        <Button id="BackToHome" fx:id="BackToHome" layoutX="14.0" layoutY="21.0" mnemonicParsing="false" onAction="#handleBackToHome" text="Back to Home" />
+        <Button fx:id="BackToMenu" layoutX="14.0" layoutY="62.0" mnemonicParsing="false" onAction="#handleBackToMenu" text="Back to Menu" />
+        <Label layoutX="261.0" layoutY="67.0" text="PANG-URI" />
+        <Label layoutX="265.0" layoutY="91.0" text="English: adjective" />
+        <TextArea editable="false" layoutX="84.0" layoutY="155.0" prefWidth="433.0" text="Ang pang-uri ay isang bahagi ng pananalita na binabago ang isang pangngalan, karaniwang sinasalarawan nito o ginagawang mas partikular ito." wrapText="true" />
+    </children>
+</AnchorPane>
