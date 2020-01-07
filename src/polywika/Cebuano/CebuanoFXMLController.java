@@ -33,7 +33,7 @@ public class CebuanoFXMLController implements Initializable {
 
     public void handleButtonActionBack(ActionEvent event) throws IOException {
         //System.out.println("Lmao gumagana");
-        Parent homePage = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
+        Parent homePage = FXMLLoader.load(getClass().getResource("/polywika/HomePage.fxml"));
         Scene homePageScene = new Scene(homePage);
         Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
